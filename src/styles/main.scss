@@ -15,6 +15,15 @@ a {
 	text-decoration: none;
 }
 
+.title-h2 {
+	font-size: 32px;
+	font-weight: 700;
+	line-height: 110%;
+	letter-spacing: 1.6px;
+	text-transform: uppercase;
+	margin: 0;
+}
+
 .header {
 	width: 100%;
 	display: flex;
@@ -354,5 +363,81 @@ a {
 	}
 	100% {
 		transform: translate(-100%, 0);
+	}
+}
+
+.course {
+	display: flex;
+	gap: 70px;
+	&__title {
+		flex-basis: 395px;
+	}
+	&__control {
+		margin-top: 40px;
+	}
+	&__content {
+		flex-basis: calc(100% - 395px - 71px);
+		width: calc(100% - 395px - 71px);
+	}
+}
+
+.course-control {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+
+	&__prev,
+	&__next {
+		width: 70px;
+		height: 70px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: 1px solid var.$light;
+		border-radius: 100%;
+		right: inherit;
+		left: inherit;
+		position: inherit;
+		transition: var.$tr;
+		&::after {
+			content: '';
+			display: block;
+			width: 49px;
+			height: 24px;
+			background-repeat: no-repeat;
+			background-size: contain;
+		}
+		&:hover {
+			background-color: var.$accent;
+			border-color: var.$accent;
+		}
+	}
+	&__prev {
+		&::after {
+			background-image: url(../images/ui/arrow-left.svg);
+		}
+	}
+	&__next {
+		&::after {
+			background-image: url(../images/ui/arrow-right.svg);
+		}
+	}
+}
+.swiper-navigation-icon {
+	display: none;
+}
+
+.slider-teacher {
+	height: 707px;
+	position: relative;
+	&__item {
+		background-color: var.$dark;
+		border-radius: 50px;
+	}
+	&__img {
+		width: 100%;
+		position: absolute;
+		bottom: 30px;
+		left: 30px;
 	}
 }
